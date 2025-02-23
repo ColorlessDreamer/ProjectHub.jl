@@ -1,6 +1,6 @@
 module ProjectHub
 
-export hello_world, show_menu, run_project, guessing_game, start_hub, timeit, test, test_big
+export hello_world, show_menu, run_project, guessing_game, start_hub, timeit
 
 function hello_world()
     return ("Hello, Julia!")
@@ -151,31 +151,6 @@ function timeit(f, args...; kwargs...)
     elapsed = @elapsed result = f(args...; kwargs...)
     println("Result: $result")
     println("Elapsed time: $elapsed seconds")
-end
-
-function test()
-    test_num = 100
-    a = 1
-    b = 1
-    for x in 1:test_num
-        a *= 2  # equivalent to: a = a * 2
-        b *= 3  # equivalent to: b = b * 3
-    end
-    c = a + b
-    return ("a=$a, b=$b, c=$c")
-end
-
-
-function test_big()
-    test_num = big(100_000_000)
-    a = big(3)
-    b = big(2)
-    for _ in 1:test_num
-        a * 2
-        b * 3
-    end
-    c = a + b
-    return a, b, c
 end
 
 end
